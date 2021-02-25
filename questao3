@@ -1,0 +1,8 @@
+#!/bin/bash
+dados= 'pwd'
+d="*"
+data=`/bin/date +%d-%m-%Y`
+mkdir /tmp/$data
+cp $dados$d  /tmp/$data
+
+

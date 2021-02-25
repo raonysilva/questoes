@@ -1,0 +1,11 @@
+#!/bin/bash 
+
+echo "Digite o primeito diretorio"
+read di1;
+echo "Digite o segundo diretorio"
+read di2;
+echo "Digite o terceiro diretoio"
+read di3;
+echo "Primeiro diretorio:$di1 "
+echo "Segundo diretorio :$di2 "
+echo "Terceiro diretorio :$di3"

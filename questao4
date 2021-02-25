@@ -1,0 +1,5 @@
+#!/bin/bash 
+ 
+data=`/bin/date +%d-%m-%Y`
+tar -cvzf ${data}.tar.gz /tmp/$data
+
