@@ -1,3 +1,3 @@
 #!/bin/bash 
 pwd =a
-rm -rf $a
+rm -rf $a &> saidas
