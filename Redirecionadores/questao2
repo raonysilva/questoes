@@ -1,3 +1,4 @@
 #!/bin/bash
 
 paste a.txt |bc
+bc < a.txt
