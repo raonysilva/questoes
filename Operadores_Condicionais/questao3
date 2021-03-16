@@ -3,5 +3,14 @@
 $1 $2
 q1=$(ls -Rl $1 | grep "^-"  -c)
 q2=$(ls -Rl $2 | grep "^-"  -c)
-echo "$q1"
-echo "$q2"
+
+if [ $q1 -lt $q2 ];
+then
+    ls $2
+elif [ $q2 -lt $q1 ]
+then
+   ls $1
+elif [ $q1 -eq $q2 ]
+then
+   echo " sao iguais!"
+fi
