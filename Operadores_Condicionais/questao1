@@ -1,0 +1,5 @@
+#!/bin/bash
+$1 $2 $3
+test -e $1 && echo "Arquivo $1 Existe" || echo "Arquivo $1 nao Existe"
+test -e $2 && echo "Arquivo $2 Existe" || echo "Arquivo $2 nao Existe"
+test -e $3 && echo "Arquivo $3 Existe" || echo "Arquino $3 nao Existe"

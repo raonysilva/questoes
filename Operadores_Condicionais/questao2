@@ -1,0 +1,12 @@
+#!/bin/bash
+
+$1 $2
+linha1=$(wc -l < $1)
+linha2=$(wc -l < $2)
+echo "$linha1"
+echo "$linha2"
+if ["$linha1" -lt "$linha2"]; then
+	echo "Maior quantidades de linhas foi: $2"
+	else 
+		echo "Maior quantidades de linhas foi: $1"
+	fi
