@@ -5,8 +5,14 @@ linha1=$(wc -l < $1)
 linha2=$(wc -l < $2)
 echo "$linha1"
 echo "$linha2"
-if ["$linha1" -lt "$linha2"]; then
-	echo "Maior quantidades de linhas foi: $2"
-	else 
-		echo "Maior quantidades de linhas foi: $1"
-	fi
+
+if [ $linha1 -lt $linha2 ]
+then
+   echo "$1 é menor que $2!"
+elif [ $linha1 -gt $linha2 ]
+then
+   echo "$2 é maior que $1!"
+elif [ $linha1 -eq $linha2 ]
+then
+   echo "$1 é igual a $2!"
+fi
