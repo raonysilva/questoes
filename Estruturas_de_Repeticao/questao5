@@ -1,0 +1,17 @@
+#!/bin/bash
+
+ifs=$IFS
+IFS=$'\n'
+
+echo "Verificando os hashes dos arquivos do diretório atual..."
+
+for file1 in $(find . -maxdepth 1 -type f | cut -d "/" -f2); do
+  md51=$(md5sum $file1  | cut -d " " -f1)
+  for file2 in $(find . -maxdepth 1 -type f | cut -d "/" -f2 | grep -v "$file1"); do
+    md52=$(md5sum $file2 | cut -d " " -f1)
+    if [ "$md51" == "$md52" ]; then
+      echo "Arquivos $file1 e $file2 são iguais."
+    fi
+  done
+done
+
