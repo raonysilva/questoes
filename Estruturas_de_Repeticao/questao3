@@ -6,14 +6,12 @@ if [ ! -d "$1" ]; then
 fi
 
 
-COUNT=0
-for ARG in $(ls); do
-   COUNT=`expr $COUNT + 1`
-   
-   echo "Argumento $COUNT: $ARG"
-  
-    wc -l $1$ARG
 
+for ARG in $(ls); do
+  
+    wc -l $1$ARG | sort
+   
+    
 
 done
 
