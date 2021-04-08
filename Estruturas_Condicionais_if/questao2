@@ -1,0 +1,29 @@
+#!/bin/bash
+
+if  [ -z $x ];then
+read -p "Digite o Valor X Vazio: " x
+while [ -z $x ];do
+echo "Parametro X vazio "
+read $x
+done
+fi
+export  x
+if [ -z $y ];then
+read -p "Digite o Valor Y Vazio: " y
+while [ -z $y ];do
+echo "Parametro Y vazio "
+read y
+done
+fi
+export  y
+if [ -z $z ];then
+read -p "Digite o Valor Z Vazio: " z
+while [ -z $z ];do
+echo "Parametro Z vazio "
+read z
+done
+fi
+export  z
+echo "Resultado: $((x+y+z))"
+
+

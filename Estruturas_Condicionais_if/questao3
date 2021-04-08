@@ -1,0 +1,8 @@
+#!/bin/bash
+echo -e  "\n   DIRS  \n "
+ls -d */
+
+echo -e "\n   FILES  \n "
+ls -F | grep -v '/$'
+echo -e "\n   LINKS  \n "
+ls -la /var/www/ | grep "\->"
