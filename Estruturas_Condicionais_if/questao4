@@ -1,1 +1,8 @@
 #!/bin/bash
+
+arquivos=$(ls -1)
+for arquivo in $arquivos
+do
+ test -x $arquivo && rm $arquivo |echo "Arquivo $arquivo E Executavel APAGADO" || echo "Arquivo $arquivo nao Executavel nao APAGADO"
+ 
+done
