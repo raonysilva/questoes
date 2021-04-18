@@ -1,0 +1,11 @@
+#!/bin/bash
+$1 $2
+
+case $1 in
+    d) pwd ;;
+    f)  ls  ;;
+    v) cat $2  ;;
+    cd) cd $2 ;;
+    q) echo "Saindo..." ;;
+    *) echo "Não reconheço a tecla digitada..." ;;
+esac
