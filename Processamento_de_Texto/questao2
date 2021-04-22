@@ -1,0 +1,3 @@
+#!/bin/bash
+read -p "Digite o Arquivo: " arq
+tr -s '\n' < $arq > $arq"2"  
