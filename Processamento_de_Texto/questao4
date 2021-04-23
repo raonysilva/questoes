@@ -1,0 +1,35 @@
+#!/bin/bash
+
+echo -n "Informe um endereco IP: "
+read ip
+
+# Verifica se o input informado e valido como endereco IP
+if ! echo "$ip" | grep -q '\([0-9]\{1,3\}\.\)\{3\}[0-9]\{1,3\}'; then
+        echo 'Formato invalido para endereco IP'
+        exit 1
+fi
+
+OLD_IFS=$IFS
+IFS='.'
+
+set - $ip
+
+converterBase() {
+        echo "obase=2; $1" | bc
+}
+
+octeto1=`converterBase $1`
+octeto2=`converterBase $2`
+octeto3=`converterBase $3`
+octeto4=`converterBase $4`
+
+for i in $octeto1 $octeto2 $octeto3 $octeto4
+do
+	   
+            printf  'Octeto:  %08d\n' $i
+	
+done
+
+IFS=$OLD_IFS
+
+exit 0

@@ -1,2 +1,4 @@
 #!/bin/bash
 
+read -p "Digite o Arquivo: " arq
+head -n 3 $arq 
