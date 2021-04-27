@@ -1,4 +1,16 @@
 #!/bin/bash
+read -p "Digite o Nome do Arquivo: " arq
 
-read -p "Digite o Arquivo: " arq
-head -n 3 $arq 
+if [ -e $arq ]; then
+	linhas=$(cat $arq| wc -l)
+
+	for (( i = 1; i <= linhas / 3; i++ )); do
+	head -"$(( 3 * i ))" < "$arq" | tail -3
+	read -n1
+	done
+	tail -"$(( linhas % 3 ))" $arq
+
+ else
+ echo "Arquivo Nao existe"
+ exit 1
+ fi
