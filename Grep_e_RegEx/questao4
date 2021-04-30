@@ -1,0 +1,10 @@
+#!/bin/bash
+ 
+
+read -p "Digite o Email: "  email
+
+    if echo "${email}" | grep '^[a-zA-Z0-9.,_]*@[a-zA-Z0-9]*\.[a-zA-Z0-9]*$' >/dev/null; then
+        echo " $email Valido"
+    else
+        echo "$email Fora do Padrao"
+    fi

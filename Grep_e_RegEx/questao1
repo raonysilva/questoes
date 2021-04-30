@@ -1,0 +1,32 @@
+#!/bin/bash
+echo  "
+a - Liste apenas os diretórios de uma pasta
+b - Liste apenas os arquivos executáveis
+c - Liste apenas os scripts shell
+d - Liste apenas os links simbólicos
+e - Liste apenas arquivos com tamanho menor que 100 Bytes
+" $1
+
+case $1 in
+    a)read -p "Digite o Diretorio: " x 
+	   if [ -e $x ]; then
+		   ls -la  $x
+		   exit 1
+	   
+	   else
+		echo "Diretorio  Nao Existe"
+		exit 1
+		fi ;;
+
+    b)read -p "Digite o Diretorio: " x
+	    if [ -e $x ]; then
+		ls -l $x | grep '^-..x'
+		exit 1
+	    else
+		echo "Diretorio Nao Exite"
+		exit 1
+	    fi;;
+    d) ls -la / | grep "\->" ;;
+    q) echo "Saindo..." ;;
+    *) echo "Não reconheço a tecla digitada..." ;;
+esac

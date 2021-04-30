@@ -1,0 +1,11 @@
+#!/bin/bash
+read -p "Digite a Senha: " x
+if echo $x| grep -qP '^.*(?=.*[A-Z])(?=.*\d)(?=.*[a-z]).*$'; then
+ echo 'Senha obedece ao padrão'
+ exit 0
+else
+  
+  echo 'A senha não atende aos requisitos de complexidade' 1>&2
+  exit 0
+fi
+
