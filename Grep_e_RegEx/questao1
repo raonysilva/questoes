@@ -28,7 +28,7 @@ case $1 in
 	    fi;;
     d) read -p "Digite o Diretorio: " x
 	    if [ -e $x ]; then
-		ls -la $x | grep "\->" ;;
+		ls -la $x | grep "\->" 
 		exit 1
 	    else
 		echo "Diretorio Nao Exite"
