@@ -26,7 +26,13 @@ case $1 in
 		echo "Diretorio Nao Exite"
 		exit 1
 	    fi;;
-    d) ls -la / | grep "\->" ;;
-    q) echo "Saindo..." ;;
+    d) read -p "Digite o Diretorio: " x
+	    if [ -e $x ]; then
+		ls -la $x | grep "\->" ;;
+		exit 1
+	    else
+		echo "Diretorio Nao Exite"
+		exit 1
+	    fi;;
     *) echo "Não reconheço a tecla digitada..." ;;
 esac
