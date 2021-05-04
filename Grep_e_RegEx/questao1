@@ -10,7 +10,8 @@ e - Liste apenas arquivos com tamanho menor que 100 Bytes
 case $1 in
     a)read -p "Digite o Diretorio: " x 
 	   if [ -e $x ]; then
-		   ls -la  $x
+		   ls -l  $x | grep  "^d"
+		   
 		   exit 1
 	   
 	   else
@@ -26,6 +27,15 @@ case $1 in
 		echo "Diretorio Nao Exite"
 		exit 1
 	    fi;;
+    c)read -p "Digite o Diretorio: " x 
+	   if [ -e $x ]; then
+		   ls -l $x| grep ".*\.sh"
+		   exit 1
+	   
+	   else
+		echo "Diretorio  Nao Existe"
+		exit 1
+		fi ;;
     d) read -p "Digite o Diretorio: " x
 	    if [ -e $x ]; then
 		ls -la $x | grep "\->" 
@@ -34,5 +44,15 @@ case $1 in
 		echo "Diretorio Nao Exite"
 		exit 1
 	    fi;;
+    e)read -p "Digite o Diretorio: " x 
+	   if [ -e $x ]; then
+		   find $x -size -100c | grep . 
+		   
+		   exit 1
+	   
+	   else
+		echo "Diretorio  Nao Existe"
+		exit 1
+		fi ;;
     *) echo "Não reconheço a tecla digitada..." ;;
 esac
