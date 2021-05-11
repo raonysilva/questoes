@@ -1,0 +1,34 @@
+#!/bin/bash
+$1
+
+case $1 in
+    a) read -p "Arquivo o Diretorio: " x 
+	  if [ -e $x ]; then    
+	    sed -i 's/[a-z]\+//g' $x 
+	    sed -i 's/[A-Z]\+//g' $x
+	    exit 1
+	    else
+		echo "Arquivo  Nao Existe"
+		exit 1
+		fi ;;
+    b) read -p "Digite o Arquivo " x 
+	   if [ -e $x ]; then    
+	    
+	    sed -i  's/[0-9]\+//g' $x 
+	     exit 1
+	   
+	   else
+		echo "Arquivo  Nao Existe"
+		exit 1
+		fi ;;
+    c) read -p "Digite Arquivo " x 
+	   if [ -e $x ]; then    
+	    sed -i 's/[^A-Za-z0-9]/<?>/g' < $x
+	   exit 1
+	   
+	   else
+		echo "Arquivo  Nao Existe"
+		exit 1
+		fi ;;
+    *) echo "Não reconheço a tecla digitada..." ;;
+esac
