@@ -19,15 +19,15 @@ if (acc/3.0 >= 70) ap++;
 else rp++;
 
 if (acc/3.0 -le 9.9) a++;
-else if (acc/3.0 -ge 10 && acc/3.0 -le 19.9) b++;
-else if (acc/3.0 -ge 20 && acc/3.0 -le 29.9) c++;
-else if (acc/3.0 -ge 30 && acc/3.0 -le 39.9) d++;
-else if (acc/3.0 -ge 40 && acc/3.0 -le 49.9) e++;
-else if (acc/3.0 -ge 50 && acc/3.0 -le 59.9) f++;
-else if (acc/3.0 -ge 60 && acc/3.0 -le 69.9) g++;
-else if (acc/3.0 -ge 70 && acc/3.0 -le 79.9) h++;
-else if (acc/3.0 -ge 80 && acc/3.0 -le 89.9) j++;
-else if (acc/3.0 -ge 90 && acc/3.0 -le 99.9) m++;
+else if ((acc/3.0 -ge 10) &&( acc/3.0 -le 19.9)) b++;
+else if ((acc/3.0 -ge 20) && (acc/3.0 -le 29.9)) c++;
+else if ((acc/3.0 -ge 30) && (acc/3.0 -le 39.9)) d++;
+else if ((acc/3.0 -ge 40) && (acc/3.0 -le 49.9)) e++;
+else if ((acc/3.0 -ge 50) && (acc/3.0 -le 59.9)) f++;
+else if ((acc/3.0 -ge 60) && (acc/3.0 -le 69.9)) g++;
+else if ((acc/3.0 -ge 70) && (acc/3.0 -le 79.9)) h++;
+else if ((acc/3.0 -ge 80) && (acc/3.0 -le 89.9)) j++;
+else if ((acc/3.0 -ge 90) && (acc/3.0 -le 99.9)) m++;
 else m++;
 
 }
