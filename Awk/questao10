@@ -1,0 +1,26 @@
+BEGIN {
+	print "Usuarios"
+	print ""
+	total=1
+}
+
+{
+	nome =""
+	if(NF >=4 && NF <7)
+	{
+		user=""
+		for( i=2;i <=NF;i++){
+		  nome = nome""substr($i,1,1);
+		}
+		user=$1""nome
+		A[total]=user
+		total =total +1
+	
+			
+	}
+	
+}
+END {
+	for( i in A){
+		print A[i]}
+}
