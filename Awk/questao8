@@ -1,0 +1,13 @@
+{
+	acc = 0;
+	for ( i=l; i<=NF; i++ )
+	{
+	  if ( $i ~ /[0-9]+/ ) acc = acc+$i;
+	}
+if (acc/3.0 >= 70) ap++;
+else rp++;
+}
+END {
+print "Aprovados: "  ap
+print "Reprovados: " rp 
+}
