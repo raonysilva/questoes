@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cat nomes | awk '{ print $1" "$2}' > meninos
+cat nomes | awk '{ print $3" "$4}' > meninas
