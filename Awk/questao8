@@ -1,34 +1,26 @@
+#!/usr/bin/awk -f
 {
 	acc  = 0;
-	a =0 ;
-	b = 0;
-	c = 0;
-	d = 0;
-	e = 0;
-	f = 0;
-	g = 0;
-	h = 0;
-	j = 0;
-	m = 0;
-	n = 0;
+	
 	for ( i=l; i<=NF; i++ )
 	{
 	  if ( $i ~ /[0-9]+/ ) acc = acc+$i;
+	
 	}
-if (acc/3.0 >= 70) ap++;
+media=acc/3.0;
+if (media >= 70) ap++;
 else rp++;
+if (media  <= 9.9) a++;
+else if (media >= 10 && media <= 19.9) b++;
+else if (media >= 20 && media <= 29.9) c++;
+else if (media >= 30 && media <= 39.9) d++;
+else if (media >= 40 && media <= 49.9) e++;
+else if (media >= 50 && media <= 59.9) f++;
+else if (media >= 60 && media <= 69.9) g++;
+else if (media >= 70 && media <= 79.9) h++;
+else if (media >= 80 && media <= 89.9) j++;
+else if (media >= 90 && media <= 100) m++;
 
-if (acc/3.0 -le 9.9) a++;
-else if ((acc/3.0 -ge 10) &&( acc/3.0 -le 19.9)) b++;
-else if ((acc/3.0 -ge 20) && (acc/3.0 -le 29.9)) c++;
-else if ((acc/3.0 -ge 30) && (acc/3.0 -le 39.9)) d++;
-else if ((acc/3.0 -ge 40) && (acc/3.0 -le 49.9)) e++;
-else if ((acc/3.0 -ge 50) && (acc/3.0 -le 59.9)) f++;
-else if ((acc/3.0 -ge 60) && (acc/3.0 -le 69.9)) g++;
-else if ((acc/3.0 -ge 70) && (acc/3.0 -le 79.9)) h++;
-else if ((acc/3.0 -ge 80) && (acc/3.0 -le 89.9)) j++;
-else if ((acc/3.0 -ge 90) && (acc/3.0 -le 99.9)) m++;
-else m++;
 
 }
 END {
@@ -46,6 +38,6 @@ print " Notas  50 - 59.9 = " f
 print " Notas  60 - 69.9 = " g
 print " Notas  70 - 79.9 = " h
 print " Notas  80 - 89.9 = " j
-print " Notas  90 - 99.9 = " m
-print " Notas  100 = " n
+print " Notas  90 - 100 = " m
+
 }
