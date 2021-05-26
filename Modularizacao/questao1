@@ -1,11 +1,35 @@
 #!/bin/bash
-read -p "Digite dois numeros:  " n1 n2
-maior() {
-	(( $n1 >= $n2 )) && echo $n1 || echo $n2
+
+
+function maior {
+NUM=$*
+MAIOR=$1
+for i in `echo $NUM`;
+do
+if [ $i -gt $MAIOR ];
+then
+MAIOR=$i
+fi
+done
+
+echo "O maior número é '$MAIOR'"
 }
-maior $n1 $n2
-read -p "Digite dois numeros:  " n3 n4
-menor() {
-	(( $n3 <= $n4 )) && echo $n3 || echo $n4
+
+
+function menor {
+NUM2=$*
+MENOR=$1
+for r in `echo $NUM2`;
+do
+if [ $r -lt $MENOR ];
+then
+MENOR=$r
+fi
+done
+
+echo "O menor  número é '$MENOR'" 
+
 }
-menor $n3 $n4
+
+ maior  $*
+ menor  $*
