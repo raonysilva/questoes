@@ -1,0 +1,26 @@
+#!/bin/bash
+
+read -p " Digite os  números: " numeros
+
+arry=( $numeros )
+
+maior=${arry[1]} 
+
+function maior_num {
+  
+  for i in ${arry[*]}; do
+  comparar_num=$(echo $i '>' $maior | bc -l)
+   if [[ $comparar_num -eq 1 ]];then
+     maior=$i
+   fi
+  done
+  echo $maior
+}
+
+if [[ -n $numeros ]]; then
+	echo " O maior número digitado é:" $(maior_num)
+
+else
+	echo " Numeros não informado!"
+   		
+fi
