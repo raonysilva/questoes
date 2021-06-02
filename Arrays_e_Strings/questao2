@@ -1,0 +1,8 @@
+#!/bin/bash
+
+
+read -p "qual o arquivo: " arq
+
+
+LC_ALL=C awk '{sum[$1] += $2} END {for (i in sum) print i, sum[i]}' $arq > resu && sort resu
+echo "$(rm resu)"
